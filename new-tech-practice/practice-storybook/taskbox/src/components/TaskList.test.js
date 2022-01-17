@@ -1,3 +1,6 @@
+/* eslint-disable testing-library/no-node-access */
+// src/components/TaskList.test.js
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import '@testing-library/jest-dom/extend-expect';
