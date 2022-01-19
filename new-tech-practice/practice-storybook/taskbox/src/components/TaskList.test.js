@@ -1,22 +1,18 @@
-/* eslint-disable testing-library/no-node-access */
-// src/components/TaskList.test.js
+import { render } from '@testing-library/react';
 
-import React from 'react';
-import ReactDOM from 'react-dom';
-import '@testing-library/jest-dom/extend-expect';
+import { composeStories } from '@storybook/testing-react';
 
-import { WithPinnedTasks } from './TaskList.stories'; //👈  Our story imported here
+import * as TaskListStories from './TaskList.stories'; //👈  Our stories imported here
+
+//👇 composeStories will process all information related to the component (e.g., args)
+const { WithPinnedTasks } = composeStories(TaskListStories);
 
 it('renders pinned tasks at the start of the list', () => {
-  const div = document.createElement('div');
-  //👇 Story's args used with our test
-  ReactDOM.render(<WithPinnedTasks {...WithPinnedTasks.args} />, div);
+  const { container } = render(<WithPinnedTasks />);
 
-  // We expect the task titled "Task 6 (pinned)" to be rendered first, not at the end
-  const lastTaskInput = div.querySelector(
-    '.list-item:nth-child(1) input[value="Task 6 (pinned)"]'
-  );
-  expect(lastTaskInput).not.toBe(null);
-
-  ReactDOM.unmountComponentAtNode(div);
+  expect(
+    container.querySelector(
+      '.list-item:nth-child(1) input[value="Task 6 (pinned)"]'
+    )
+  ).not.toBe(null);
 });
