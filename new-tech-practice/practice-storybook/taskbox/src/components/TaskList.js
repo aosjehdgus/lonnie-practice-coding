@@ -75,6 +75,8 @@ PureTaskList.defaultProps = {
   loading: false,
 };
 
+console.log('test');
+
 export function TaskList() {
   // We're retrieving our state from the store
   const tasks = useSelector((state) => state.tasks);
