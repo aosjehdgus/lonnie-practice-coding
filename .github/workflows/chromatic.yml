@@ -5,7 +5,6 @@ name: 'Chromatic Deployment'
 
 # Event for the workflow
 on: push
-
 # List of jobs
 jobs:
   test:
