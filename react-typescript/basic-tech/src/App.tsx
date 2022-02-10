@@ -1,14 +1,13 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { AddTodoForm } from './AddTodoForm';
 import { TodoList } from './TodoList';
-import { TodoListItem } from './TodoListItem';
 
 const initialTodos: Array<Todo> = [
   {text: "Walk the dog", complete: true},
   {text: "Write app", complete: false}
 ]
 
-const App: React.FC = () =>{
+function App() {
   const [todos, setTodos] = useState(initialTodos)
   
   const toggleTodo: ToggleTodo = selectedTodo => {
