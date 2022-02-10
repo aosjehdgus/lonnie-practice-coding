@@ -1,4 +1,4 @@
-import "./TodoListItem.css";
+import "../TodoListItem.css";
 
 interface TodoListItemProps {
     todo: Todo;
