@@ -8,7 +8,7 @@ const initialTodos = [
   },
   {
     id: 2,
-    text: '할일 2',
+    text: 'To do list 클론 코딩 하기',
     done: false,
   },
 ];
