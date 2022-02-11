@@ -1,9 +1,14 @@
 import { createGlobalStyle } from 'styled-components';
+
 import Toggle from './components/Toggle';
 
 const GlobalStyle = createGlobalStyle`
   body{
-    background: #e9ecef;
+    padding: 0px;
+    margin:0px;
+    width:100%;
+    height:100vh;
+ 
   }
 `;
 

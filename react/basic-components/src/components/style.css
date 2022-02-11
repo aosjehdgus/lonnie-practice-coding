@@ -1,0 +1,54 @@
+input {
+
+    position: absolute;
+    left: -1000%;
+    
+}
+
+input:checked + label {
+    background: #83817b;
+    /* background: radial-gradient(#e3b709,#ffd374); */
+}
+
+input:checked + label:after{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    content: "Dark";
+    left: calc(100% - 52.5px);
+    right: 7.5px;
+}
+
+label{
+    display: block;
+    position: relative;
+    width: 120px;
+    height: 60px;
+    font-weight: 700;
+    background: #ffd374;
+    /* background: radial-gradient(#74b9ff,#0984e3); */
+    border-radius: 60px;
+    transition: background .4s;
+}
+
+label:after{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    content: "Light";
+    position: absolute;
+    left: 7.5px;
+    top: 50%;
+    width: 45px;
+    height: 45px;
+    border-radius: 100%;
+    background: #fff;
+    transform: translateY(-50%);
+    box-shadow: 1px 3px 4px rgba(0,0,0, .2);
+    transition:all 0.4s;
+}
+
+label span{
+    display: none;
+}
